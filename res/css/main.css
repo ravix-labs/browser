@@ -1,0 +1,488 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+-webkit-text-size-adjust:100%;
+}
+
+body{
+background:#040107;
+font-family:Inter,Arial,sans-serif;
+color:white;
+overflow-x:hidden;
+min-height:100vh;
+}
+
+/* =========================
+BACKGROUND
+========================= */
+
+.bg-overlay{
+position:fixed;
+inset:0;
+background:
+radial-gradient(circle at top, rgba(139,92,246,.15), transparent 35%),
+radial-gradient(circle at bottom right, rgba(217,70,239,.08), transparent 28%);
+z-index:-2;
+pointer-events:none;
+}
+
+.grid-overlay{
+position:fixed;
+inset:0;
+opacity:.03;
+background-image:
+linear-gradient(to right, rgba(255,255,255,.04) 1px, transparent 1px),
+linear-gradient(to bottom, rgba(255,255,255,.04) 1px, transparent 1px);
+background-size:60px 60px;
+z-index:-1;
+pointer-events:none;
+}
+
+/* =========================
+HEADER
+========================= */
+
+.header{
+position:sticky;
+top:0;
+z-index:100;
+background:rgba(0,0,0,.75);
+backdrop-filter:blur(20px);
+border-bottom:1px solid rgba(255,255,255,.05);
+}
+
+.header-inner{
+max-width:1280px;
+margin:auto;
+padding:14px 20px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:20px;
+}
+
+.brand{
+display:flex;
+align-items:center;
+gap:12px;
+}
+
+.logo{
+width:38px;
+height:38px;
+object-fit:contain;
+filter:drop-shadow(0 0 16px rgba(168,85,247,.45));
+}
+
+.text-logo{
+height:20px;
+object-fit:contain;
+}
+
+/* =========================
+BUTTONS
+========================= */
+
+.download-btn,
+.discord-btn,
+.secondary-btn{
+display:flex;
+align-items:center;
+justify-content:center;
+padding:16px 24px;
+border-radius:18px;
+font-size:15px;
+font-weight:700;
+transition:.25s;
+text-decoration:none;
+white-space:nowrap;
+}
+
+.download-btn{
+background:linear-gradient(to right,#8b5cf6,#d946ef);
+color:white;
+box-shadow:0 0 24px rgba(168,85,247,.25);
+}
+
+.discord-btn{
+background:linear-gradient(to right,#5865F2,#7b8cff);
+color:white;
+box-shadow:0 0 24px rgba(88,101,242,.18);
+}
+
+.secondary-btn{
+background:rgba(255,255,255,.03);
+border:1px solid rgba(168,85,247,.14);
+color:white;
+}
+
+.download-btn:hover,
+.discord-btn:hover,
+.secondary-btn:hover{
+transform:translateY(-2px);
+}
+
+/* =========================
+HERO
+========================= */
+
+.hero-section{
+padding:80px 20px 120px;
+}
+
+.hero-container{
+max-width:1280px;
+margin:auto;
+
+display:grid;
+grid-template-columns:1fr 420px;
+
+align-items:center;
+gap:80px;
+}
+
+.hero-left{
+max-width:680px;
+}
+
+.hero-badge{
+display:inline-flex;
+align-items:center;
+gap:10px;
+padding:12px 18px;
+border-radius:999px;
+background:rgba(139,92,246,.08);
+border:1px solid rgba(168,85,247,.16);
+font-size:11px;
+letter-spacing:.12em;
+color:#d8b4fe;
+margin-bottom:26px;
+}
+
+.pulse{
+width:8px;
+height:8px;
+border-radius:50%;
+background:#e879f9;
+animation:pulse 1.5s infinite;
+}
+
+@keyframes pulse{
+0%{
+opacity:.3;
+transform:scale(1);
+}
+50%{
+opacity:1;
+transform:scale(1.3);
+}
+100%{
+opacity:.3;
+transform:scale(1);
+}
+}
+
+.hero-title{
+font-size:6.5rem;
+line-height:.9;
+letter-spacing:-.06em;
+font-weight:900;
+}
+
+.hero-title span{
+background:linear-gradient(to right,#fff,#c084fc,#e879f9);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.hero-text{
+margin-top:28px;
+font-size:1.08rem;
+line-height:1.9;
+color:#8b8b96;
+max-width:620px;
+}
+
+.hero-actions{
+display:flex;
+flex-wrap:wrap;
+gap:16px;
+margin-top:42px;
+}
+
+/* =========================
+PHONE
+========================= */
+
+.hero-phone-wrapper{
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.phone{
+width:100%;
+max-width:400px;
+aspect-ratio:9/18.5;
+border-radius:42px;
+overflow:hidden;
+position:relative;
+background:linear-gradient(to bottom,#14051f,#05010a);
+border:1px solid rgba(168,85,247,.16);
+box-shadow:0 0 60px rgba(168,85,247,.12);
+}
+
+.notch{
+position:absolute;
+top:14px;
+left:50%;
+transform:translateX(-50%);
+width:140px;
+height:28px;
+border-radius:999px;
+background:black;
+z-index:5;
+}
+
+.phone-content{
+padding:22px;
+padding-top:70px;
+height:100%;
+display:flex;
+flex-direction:column;
+}
+
+.url-bar{
+display:flex;
+align-items:center;
+gap:10px;
+padding:14px 16px;
+border-radius:18px;
+background:rgba(255,255,255,.04);
+border:1px solid rgba(168,85,247,.14);
+font-size:13px;
+color:#9ca3af;
+}
+
+.url-dot{
+width:8px;
+height:8px;
+border-radius:50%;
+background:#e879f9;
+flex-shrink:0;
+}
+
+.hero-card{
+margin-top:24px;
+padding:28px;
+border-radius:28px;
+background:linear-gradient(to bottom,#16051f,#0a020f);
+border:1px solid rgba(168,85,247,.1);
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+flex:1;
+}
+
+.phone-logo{
+width:120px;
+height:120px;
+object-fit:contain;
+filter:drop-shadow(0 0 40px rgba(168,85,247,.45));
+}
+
+.phone-text{
+height:28px;
+margin-top:18px;
+}
+
+.hero-card p{
+margin-top:18px;
+font-size:14px;
+line-height:1.7;
+color:#8b8b96;
+max-width:260px;
+}
+
+/* =========================
+FEATURES
+========================= */
+
+.features-section{
+padding:0 20px 100px;
+}
+
+.section-header{
+max-width:1280px;
+margin:auto;
+margin-bottom:40px;
+text-align:center;
+}
+
+.section-tag{
+font-size:11px;
+font-weight:700;
+letter-spacing:.24em;
+text-transform:uppercase;
+color:#c084fc;
+}
+
+.section-header h2{
+margin-top:12px;
+font-size:clamp(2.4rem,6vw,4.5rem);
+line-height:1.05;
+font-weight:900;
+}
+
+.features-grid{
+max-width:1280px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:20px;
+}
+
+.feature-card{
+padding:28px;
+border-radius:28px;
+background:rgba(255,255,255,.04);
+border:1px solid rgba(255,255,255,.06);
+backdrop-filter:blur(14px);
+}
+
+.feature-icon{
+width:58px;
+height:58px;
+border-radius:18px;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:24px;
+background:linear-gradient(to bottom right,#8b5cf6,#d946ef);
+box-shadow:0 0 24px rgba(168,85,247,.24);
+}
+
+.feature-card h3{
+margin-top:18px;
+font-size:24px;
+line-height:1.2;
+font-weight:800;
+color:#ddd6fe;
+}
+
+.feature-card p{
+margin-top:12px;
+font-size:15px;
+line-height:1.8;
+color:#8b8b96;
+}
+
+/* =========================
+FOOTER
+========================= */
+
+.footer{
+padding:50px 20px;
+border-top:1px solid rgba(255,255,255,.05);
+text-align:center;
+}
+
+.footer-logo{
+width:64px;
+margin:auto;
+filter:drop-shadow(0 0 18px rgba(168,85,247,.4));
+}
+
+.footer p{
+margin-top:18px;
+font-size:16px;
+color:#8b8b96;
+}
+
+/* =========================
+MOBILE
+========================= */
+
+@media(max-width:980px){
+
+.hero-section{
+padding:50px 16px 80px;
+}
+
+.hero-container{
+grid-template-columns:1fr;
+gap:40px;
+}
+
+.hero-left{
+max-width:100%;
+text-align:center;
+}
+
+.hero-title{
+font-size:clamp(3rem,18vw,5rem);
+}
+
+.hero-text{
+margin-inline:auto;
+font-size:1rem;
+line-height:1.8;
+}
+
+.hero-actions{
+flex-direction:column;
+}
+
+.hero-actions a{
+width:100%;
+}
+
+.phone{
+max-width:320px;
+border-radius:32px;
+}
+
+.notch{
+width:110px;
+height:22px;
+top:10px;
+}
+
+.phone-content{
+padding:16px;
+padding-top:52px;
+}
+
+.url-bar{
+padding:12px 14px;
+font-size:11px;
+border-radius:14px;
+}
+
+.hero-card{
+padding:20px 16px;
+border-radius:20px;
+}
+
+.phone-logo{
+width:88px;
+height:88px;
+}
+
+.phone-text{
+height:20px;
+margin-top:14px;
+}
+
+.features-grid{
+grid-template-columns:1fr;
+}
+
+}
